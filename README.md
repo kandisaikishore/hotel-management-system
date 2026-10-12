@@ -1,5 +1,10 @@
 # Hotel Management System — Front Desk
 
+## Live Demo / Deployment URL
+
+**Deployment URL:** Not verified yet. Add the confirmed public application URL here after checking the live service. The GitHub repository link is not a deployment URL.
+
+
 [![Repository](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/saikishore2410/hotel-management-system) [![Issues](https://img.shields.io/github/issues/saikishore2410/hotel-management-system)](https://github.com/saikishore2410/hotel-management-system/issues) [![Last Commit](https://img.shields.io/github/last-commit/saikishore2410/hotel-management-system)](https://github.com/saikishore2410/hotel-management-system/commits/main)
 
 > This project provides a user interface for hotel staff to review rooms and manage the lifecycle of demo reservations. It is built as a front-end project with demo data by default.
