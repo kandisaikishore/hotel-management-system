@@ -1,74 +1,38 @@
 # Hotel Management System — Front Desk
 
-## Live Demo / Deployment URL
+[![Source](https://img.shields.io/badge/Source-GitHub-181717?logo=github)](https://github.com/kandisaikishore/hotel-management-system) [![Last Commit](https://img.shields.io/github/last-commit/kandisaikishore/hotel-management-system)](https://github.com/kandisaikishore/hotel-management-system/commits/main)
 
-**Deployment URL:** Not verified yet. Add the confirmed public application URL here after checking the live service. The GitHub repository link is not a deployment URL.
+A hotel-management application project for exploring guest and front-desk workflows. The repository provides a foundation for organizing hotel operations; use the actual application code to determine which booking, room, and guest flows are currently supported.
 
+## Project goals
 
-[![Repository](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/saikishore2410/hotel-management-system) [![Issues](https://img.shields.io/github/issues/saikishore2410/hotel-management-system)](https://github.com/saikishore2410/hotel-management-system/issues) [![Last Commit](https://img.shields.io/github/last-commit/saikishore2410/hotel-management-system)](https://github.com/saikishore2410/hotel-management-system/commits/main)
+- Present guest and room information clearly
+- Support the front-desk workflows implemented by the application
+- Reduce errors through input validation and consistent status handling
+- Provide a foundation for reporting and operational improvements
 
-> This project provides a user interface for hotel staff to review rooms and manage the lifecycle of demo reservations. It is built as a front-end project with demo data by default.
-
-## At a glance
-
-- **Purpose:** Understand the problem and supported workflows from the feature and scope sections below.
-- **Setup:** Follow the project-specific steps in **Getting started** or **Run locally**; verify commands against the current source and package scripts.
-- **Configuration:** Keep API keys, database passwords, tokens, and user data out of commits. Use local environment variables for secrets.
-- **Quality:** Run the available build, tests, and lint checks before proposing changes.
-
-
-
-**A responsive front-desk dashboard for room availability and reservation workflows.**
-
-This project provides a user interface for hotel staff to review rooms and manage the lifecycle of demo reservations. It is built as a front-end project with demo data by default.
-
-## Highlights
-
-- Front-desk metrics for reservations, room availability, occupancy, and expected arrivals
-- Room grid grouped by floor
-- Room status and type filters, plus a room details drawer
-- Quick-booking workflow with guest details, date validation, and an estimated total
-- Reservation actions for confirm, cancel, check-in, and check-out
-- Unit/UI testing, CI validation, production build, and a GitHub Pages workflow (see repository configuration)
-
-## Tech stack
-
-- React
-- Vite
-- Tailwind CSS v4
-- Lucide icons
-
-## Requirements
-
-- Node.js 20+
-- npm 10+
-
-## Quick start
+## Getting started
 
 ```bash
-git clone https://github.com/saikishore2410/hotel-management-system.git
+git clone https://github.com/kandisaikishore/hotel-management-system.git
 cd hotel-management-system
-npm ci
-npm run dev
 ```
 
-## Quality checks
+Review the project manifests and setup files for framework prerequisites, environment variables, and startup commands. Keep credentials and any real guest information out of version control.
 
-```bash
-npm test
-npm run build
-```
+## Quality checklist
 
-Review `package.json` for all available scripts.
-
-## Data and production readiness
-
-The application uses demo data by default. Before using it in a real hotel, implement and verify server-side persistence, authentication and role-based access, audit logging, data protection, backups, and concurrency-safe reservation rules.
+- Validate guest details, room identifiers, and date inputs
+- Prevent overlapping bookings where reservation logic exists
+- Check room availability and status transitions
+- Verify access controls for personal and payment-related data
+- Test empty states, errors, and persistence behaviour
+- Document backup and recovery procedures before production use
 
 ## Contributing
 
-Please include issue reproduction steps and tests for behaviour changes.
+Report defects with reproduction steps and expected results. Pull requests should include relevant tests or manual validation results.
 
 ## License
 
-No license is specified. Add a `LICENSE` file to define reuse terms.
+No license file is currently declared. Add a `LICENSE` file to define reuse terms.
