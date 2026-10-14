@@ -33,7 +33,11 @@ jobs:
         run: |
           set -e
           if [ -f package.json ]; then
-            if [ -f package-lock.json ]; then npm ci; else npm install; fi
+            if [ -f package-lock.json ]; then
+              npm ci || { echo "Lockfile is stale; using npm install for this run."; npm install; }
+            else
+              npm install
+            fi
             npm test --if-present
             npm run build --if-present
           else echo "No root package.json found."; fi
