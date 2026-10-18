@@ -7,6 +7,7 @@ import MetricsRibbon from './components/MetricsRibbon';
 import RoomGrid from './components/RoomGrid';
 import RoomDrawer from './components/RoomDrawer';
 import QuickBookingForm from './components/QuickBookingForm';
+import KitchenPrepPanel from './components/KitchenPrepPanel';
 import Toast from './components/Toast';
 
 const PAST_TENSE = {
@@ -137,6 +138,8 @@ export default function App() {
           <RoomGrid rooms={rooms} loading={loading} selectedId={selectedRoomId} onSelect={setSelectedRoomId} />
           <QuickBookingForm rooms={rooms} preset={preset} onSubmit={handleCreate} />
         </div>
+
+        <KitchenPrepPanel />
       </main>
 
       {selectedRoom && (
