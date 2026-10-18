@@ -36,3 +36,24 @@ Report defects with reproduction steps and expected results. Pull requests shoul
 ## License
 
 No license file is currently declared. Add a `LICENSE` file to define reuse terms.
+
+
+## Kitchen recipe prep station
+
+The front-desk dashboard also includes a demo kitchen-prep panel for a lemon-and-spinach pasta recipe:
+
+- Toggle between 2 and 4 servings; ingredient quantities update immediately.
+- Check ingredients as they are gathered and view preparation progress.
+- Follow a four-stage cooking workflow with stage timings and completion status.
+- Reset the checklist and workflow for a new prep session.
+
+The kitchen panel is currently a front-end demonstration. Checklist progress is session-only; it does not yet create restaurant orders, update inventory, persist kitchen tasks, or connect to a kitchen display system.
+
+Run the frontend and tests using the scripts in `package.json`:
+
+```bash
+npm install
+npm run dev
+npm test
+npm run build
+```
