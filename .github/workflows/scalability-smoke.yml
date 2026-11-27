@@ -85,7 +85,7 @@ jobs:
           python -m compileall -q .
 
       - name: Check Java source compilation when no build system exists
-        if: hashFiles('**/*.java') != '' && hashFiles('pom.xml', 'build.gradle', 'build.gradle.kts', 'gradlew') == ''
+        if: hashFiles('**/*.java') != '' && hashFiles('**/pom.xml', '**/build.gradle', '**/build.gradle.kts', '**/gradlew') == ''
         shell: bash
         run: |
           set -euo pipefail
