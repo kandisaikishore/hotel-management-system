@@ -48,7 +48,7 @@ public class ApiController {
     @PostMapping("/bookings") @ResponseStatus(HttpStatus.CREATED) @Transactional public BookingView createBooking(@Valid @RequestBody CreateBookingRequest req){
         validateDates(req.checkInDate(),req.checkOutDate());
         Guest guest=guests.findById(req.guestId()).orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Guest not found"));
-        Room room=rooms.findById(req.roomId()).orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Room not found"));
+        Room room=rooms.findByIdForUpdate(req.roomId()).orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Room not found"));
         if(room.status!=RoomStatus.AVAILABLE) throw new ResponseStatusException(HttpStatus.CONFLICT,"Room is not available");
         if(bookings.existsOverlap(room.id,req.checkInDate(),req.checkOutDate(),List.of(BookingStatus.PENDING,BookingStatus.CONFIRMED,BookingStatus.CHECKED_IN))) throw new ResponseStatusException(HttpStatus.CONFLICT,"Room already has an overlapping reservation");
         Booking b=new Booking();b.guest=guest;b.room=room;b.checkInDate=req.checkInDate();b.checkOutDate=req.checkOutDate();b.totalAmount=room.pricePerNight.multiply(BigDecimal.valueOf(ChronoUnit.DAYS.between(b.checkInDate,b.checkOutDate)));return view(bookings.save(b));
