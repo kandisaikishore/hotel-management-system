@@ -120,16 +120,17 @@ class HotelManagementApplicationTest {
             executor.shutdownNow();
         }
 
+        long adjacentRoomId = createRoom();
         ResponseEntity<String> adjacent = http.postForEntity(
             url("/bookings"),
-            bookingRequest(guestTwo, roomId, checkOut, checkOut.plusDays(2)),
+            bookingRequest(guestTwo, adjacentRoomId, checkOut, checkOut.plusDays(2)),
             String.class
         );
         assertThat(adjacent.getStatusCode()).isEqualTo(HttpStatus.CREATED);
 
         ResponseEntity<String> invalidDates = http.postForEntity(
             url("/bookings"),
-            bookingRequest(guestTwo, roomId, checkOut.plusDays(3), checkOut.plusDays(3)),
+            bookingRequest(guestTwo, adjacentRoomId, checkOut.plusDays(3), checkOut.plusDays(3)),
             String.class
         );
         assertThat(invalidDates.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
